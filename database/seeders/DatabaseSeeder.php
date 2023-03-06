@@ -14,10 +14,18 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\User::factory()->create([
-            'name' => 'Gab',
-            'email' => 'gab@gmail.com',
-            'password'=>'$2y$10$vV/iTwViScqGfT/v.rz3tuMDsg5aMPJi5f9qtlyC4I3Q5woGvVwIq'
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Gab',
+        //     'email' => 'gab@gmail.com',
+        //     //aYmFaVznAFtb29A
+        //     'password'=>'$2y$10$/8JzNhsOSbs4rNepIerpVuyoWAVdmWVqEqcu1Dawjwc/knq9tDCIu'
+        // ]);
+        $this->call([
+            PermissionsTableSeeder::class,
+            RoleTableSeeder::class,
+            PermissionRoleTableSeeder::class,
+            UserTableSeeder::class,
+            RoleUserTableSeeder::class,
         ]);
     }
 }
