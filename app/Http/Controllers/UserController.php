@@ -17,7 +17,8 @@ class UserController extends Controller
     //
     public function index()
     {
-        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+  //      dd(Gate::allows('task_access'));
+        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, 'Vc não tem o adm ;-;');
 
         $users = User::with('roles')->get();
 
